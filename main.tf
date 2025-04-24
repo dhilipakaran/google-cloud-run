@@ -1,17 +1,17 @@
 provider "google" {
-  project = "galvanic-portal-456405-a2"
-  region  = "us-central1"
+  project = ""
+  region  = ""
 }
 resource "google_cloud_run_service" "my_app" {
   name     = "my_application"
-  location = "us-central1"
+  region   = ""
 
   template {
     spec {
       containers {
-        image = "gcr.io/cloudrun/hello"
+        image = ""
         ports {
-          container_port =8080
+          container_port =
         }
       }
     }
@@ -30,8 +30,4 @@ resource "google_cloud_run_service_iam_member" "invoker" {
   service  = google_cloud_run_service.my_app.name
   role     = "roles/run.invoker"
   member   = "allUsers"
-}
-
-output "cloud_run_url" {
-  value = google_cloud_run_service.my_app.status[0].url
 }
