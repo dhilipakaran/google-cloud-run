@@ -26,7 +26,7 @@ resource "google_cloud_run_service" "my_app" {
 }
 
 resource "google_cloud_run_service_iam_member" "invoker" {
-  location = google_cloud_run_service.my_app.location
+  region   = google_cloud_run_service.my_app.location
   service  = google_cloud_run_service.my_app.name
   role     = "roles/run.invoker"
   member   = "allUsers"
