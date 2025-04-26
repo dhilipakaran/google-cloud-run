@@ -1,19 +1,15 @@
 variable "project_id" {
-  description = "GCP Project ID"
-  default     = ""
+  default     = "galvanic-portal-456405-a2"
 }
 
 variable "region" {
-  description = "GCP Region"
-  default     = ""
+  default     = "us-central1"
 }
 
 variable "zone" {
-  description = "GCP Zone"
-  default     = ""
+  default     = "us-central1"
 }
 
 variable "machine_type" {
-  description = "GCP Machine_type"
-  default     = ""
+  default     = "e2-medium"
 }
